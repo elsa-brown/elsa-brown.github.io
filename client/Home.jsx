@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Photo from './photo';
 import Project from './Project';
 import Description from './Description';
-import Icons from './icons';
+import Icons from './Icons';
+import IconsMobile from './IconsMobile'
 
 export default class Home extends Component {
 		constructor(props) {
@@ -123,6 +124,7 @@ export default class Home extends Component {
 							})
 						}
 					</div>
+					<IconsMobile />
 				</div>
 			</div>
 		)

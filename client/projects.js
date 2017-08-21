@@ -19,7 +19,7 @@ const projects = [
 	},
 	{
 		title: 'Road Poems',
-		desc: 'Poems written on the road.',
+		desc: 'Poems from the road.',
 		url: 'http://roadpoems.elsa-brown.com',
 		photoName: 'road'
 	},
