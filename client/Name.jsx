@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Name = (props) => {
-	return (
-		<div className={`${props.className}`}>Elsa Brown</div>
-	)
+export default class Name extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			togglePhoto: props.togglePhoto
+		}
+
+		this.handleClick = this.handleClick.bind(this)
+	}
+
+	handleClick() {
+		this.state.togglePhoto()
+	}
+
+	render() {
+		return (
+			<div className="name" onClick={this.handleClick}>Elsa Brown</div>
+		)
+	}
 }
-
-export default Name;

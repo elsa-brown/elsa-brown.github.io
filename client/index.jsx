@@ -5,11 +5,11 @@ import  { Router, Route, browserHistory } from 'react-router';
 // import 'normalize.css';
 import style from '../public/index.scss'
 
-import HomeContainer from './HomeContainer.jsx'
+import Home from './Home.jsx'
 
 ReactDOM.render(
 	<Router history={browserHistory}>
-		<Route path="/" component={HomeContainer} />
+		<Route path="/" component={Home} />
 	</Router>,
 	document.getElementById('app')
 );

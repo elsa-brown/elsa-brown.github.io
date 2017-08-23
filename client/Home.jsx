@@ -1,125 +1,87 @@
 import React, { Component } from 'react';
 
-import Photo from './photo';
-import Project from './Project';
-import Description from './Description';
+// import Name from './Name';
+import Photo from './Photo';
+import ProjectContainer from './ProjectContainer';
 import Icons from './Icons';
-import IconsMobile from './IconsMobile'
+import IconsMobile from './IconsMobile';
+
+import projects from './projects';
+// import { addPhoto, removePhoto } from './photoUtils';
+
+const addPhoto = (photo, stack) => [...stack, photo]
+const removePhoto = (photo, stack) => stack.filter(p => p !== photo)
+
 
 export default class Home extends Component {
-		constructor(props) {
-		super(props)
+		constructor() {
+		super()
 		this.state = {
-			projects: props.projects,
-			projectId: undefined,
+			projects: projects,
 			photoStack: [],
-			descOn0: false,
-			descOn1: false,
-			descOn2: false,
-			descOn3: false,
-			descOn4: false,
-			descOn5: false,
-			descClass0: 'desc',
-			descClass1: 'desc',
-			descClass2: 'desc',
-			descClass3: 'desc',
-			descClass4: 'desc',
-			descClass5: 'desc'
+			photosOn: false
 		}
 
-		this.nameHandleClick = this.nameHandleClick.bind(this)
-		this.toggleProject = this.toggleProject.bind(this)
+		this.handleClick = this.handleClick.bind(this)
+		this.togglePhoto = this.togglePhoto.bind(this)
+
 	}
 
-	nameHandleClick() {
-		console.log('in nameHandleClick photoStack is ', this.state.photoStack)
+	handleClick() {
 
-		let photoName = 'elsa'
-
-		this.togglePhoto(photoName)
+		if (!this.state.photosOn) {
+			this.setState({ photosOn: true})
+			this.togglePhoto()
+		} else {
+			let nextPhotoStack = removePhoto('elsa', this.state.photoStack)
+			this.setState({
+				photosOn: false,
+				photoStack: nextPhotoStack
+			})
+		}
 	}
 
-	toggleProject(evt) {
-		let id = evt.target.id
-		let photoName = this.state.projects[id].photoName
+	togglePhoto(id) {
 
-		let descOn = `descOn${id}`
-		let descClassKey = `descClass${id}`
-		let nextDescClass = this.state[descOn] ? 'desc' : 'desc-show'
+		let photo = id ? this.state.projects[id].photoName : 'elsa'
 
-		this.togglePhoto(photoName)
+			let photoStack = this.state.photoStack
 
-		this.setState({
-			projectId: id,
-			[descOn]: !this.state[descOn],
-			[descClassKey]: nextDescClass,
-		})
-	}
+			const nextPhotoStack =
+				this.state.photoStack.includes(photo) ?
+					removePhoto(photo, photoStack) :
+					addPhoto(photo, photoStack)
 
-	togglePhoto(photo) {
-		this.state.photoStack.includes(photo) ? 
-			this.removePhoto(photo) : 
-			this.addPhoto(photo)
-	}
-
-	addPhoto(photo) {
-		console.log('in addPhoto photo is ', photo)
-
-		this.setState( 
-			{ photoStack: [...this.state.photoStack, photo] } 
-		)
-		console.log('in addPhoto photoStack is: ', this.state.photoStack)
-	}
-
-	removePhoto(selectedPhoto) {
-		console.log('in removePhoto: ', selectedPhoto)
-		let nextPhotoStack = 
-			this.state.photoStack.filter(photo => 
-				photo !== selectedPhoto
-			)
-		this.setState({photoStack: nextPhotoStack})
+			this.setState({ photoStack: nextPhotoStack })
 	}
 
 	render() {
-		const projects = this.props.projects
-		const photoId = this.state.photoStack[this.state.photoStack.length - 1]
-		console.log('In render: photoStack: ', this.state.photoStack, 'photoId: ', photoId)
+		console.log('photosOn ?', this.state.photosOn, 'photoStack ', this.state.photoStack)
+		const photoId = this.state.photosOn ? this.state.photoStack[this.state.photoStack.length - 1] : null
 
 		return (
 			<div className="container">
-						<Photo key={photoId} id={photoId} />
+			<Photo id={photoId} />
 				<div className="body-wrapper">
 					<div className="top-container">
 						<div className="top">
-							<p className="name" onClick={this.nameHandleClick}>Elsa Brown</p>
+							<p className="name" onClick={this.handleClick}>Elsa Brown</p>
 							<Icons />
 						</div>
-						<div className="title">web developer</div>
+						<h2>web developer</h2>
 					</div>
-					<div className="title">projects:</div>
+					<h2>projects:</h2>
 					<div className="projects">
 						{
-							projects.map((project, idx) => {
-								let descClass = `descClass${idx}`
-								let descOn = `descOn${idx}`
-
+							this.state.projects.map((project, idx) => {
 								return (
-									<div 
-										className="project-container"
-										onClick={ this.toggleProject }
-										key={idx} id={idx}>
-											<Project
-												id={idx}
-												name={project.title} 
-											/>
-											{/* <i id="leaf" className="fa fa-leaf" aria-hidden="true" /> */}
-											 <Description 
-												id={idx} 
-												className={this.state[descClass]}
-												link={project.url}
-												desc={project.desc} 
-											/>
-									</div>
+									<ProjectContainer
+										key={project.name}
+										project={project}
+										id={idx}
+										togglePhoto={this.togglePhoto}
+										photosOn={this.state.photosOn}
+									/>
 								)
 							})
 						}
