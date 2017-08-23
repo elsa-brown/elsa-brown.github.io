@@ -5,7 +5,6 @@ import Description from './Description';
 
 export default class ProjectContainer extends Component {
 	constructor(props) {
-		// console.log('props.photosOn', props.photosOn)
 		super(props)
 		this.state = {
 			id: this.props.id,

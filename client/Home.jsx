@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 
-// import Name from './Name';
 import Photo from './Photo';
 import ProjectContainer from './ProjectContainer';
 import Icons from './Icons';
 import IconsMobile from './IconsMobile';
 
 import projects from './projects';
-// import { addPhoto, removePhoto } from './photoUtils';
 
 const addPhoto = (photo, stack) => [...stack, photo]
 const removePhoto = (photo, stack) => stack.filter(p => p !== photo)
-
 
 export default class Home extends Component {
 		constructor() {
@@ -24,11 +21,9 @@ export default class Home extends Component {
 
 		this.handleClick = this.handleClick.bind(this)
 		this.togglePhoto = this.togglePhoto.bind(this)
-
 	}
 
 	handleClick() {
-
 		if (!this.state.photosOn) {
 			this.setState({ photosOn: true})
 			this.togglePhoto()
@@ -38,26 +33,24 @@ export default class Home extends Component {
 				photosOn: false,
 				photoStack: nextPhotoStack
 			})
+
 		}
 	}
 
 	togglePhoto(id) {
-
 		let photo = id ? this.state.projects[id].photoName : 'elsa'
+		let photoStack = this.state.photoStack
 
-			let photoStack = this.state.photoStack
+		const nextPhotoStack = this.state.photoStack.includes(photo) ?
+			removePhoto(photo, photoStack) :
+			addPhoto(photo, photoStack)
 
-			const nextPhotoStack =
-				this.state.photoStack.includes(photo) ?
-					removePhoto(photo, photoStack) :
-					addPhoto(photo, photoStack)
-
-			this.setState({ photoStack: nextPhotoStack })
+		this.setState({ photoStack: nextPhotoStack })
 	}
 
 	render() {
-		console.log('photosOn ?', this.state.photosOn, 'photoStack ', this.state.photoStack)
-		const photoId = this.state.photosOn ? this.state.photoStack[this.state.photoStack.length - 1] : null
+		const photoId = this.state.photosOn ?
+			this.state.photoStack[this.state.photoStack.length - 1] : null
 
 		return (
 			<div className="container">
@@ -72,16 +65,9 @@ export default class Home extends Component {
 					</div>
 					<h2>projects:</h2>
 					<div className="projects">
-						{
-							this.state.projects.map((project, idx) => {
+						{ this.state.projects.map((project, idx) => {
 								return (
-									<ProjectContainer
-										key={project.name}
-										project={project}
-										id={idx}
-										togglePhoto={this.togglePhoto}
-										photosOn={this.state.photosOn}
-									/>
+									<ProjectContainer key={project.name} project={project} id={idx} togglePhoto={this.togglePhoto} photosOn={this.state.photosOn} />
 								)
 							})
 						}
