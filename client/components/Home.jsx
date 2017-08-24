@@ -16,8 +16,7 @@ export default class Home extends Component {
 		super()
 		this.state = {
 			projects: projects,
-			photoStack: [],
-			photosOn: false
+			photoStack: []
 		}
 
 		this.handleClick = this.handleClick.bind(this)
@@ -25,17 +24,18 @@ export default class Home extends Component {
 	}
 
 	handleClick() {
-		if (!this.state.photosOn) {
-			this.setState({ photosOn: true})
-			this.togglePhoto()
-		} else {
-			let nextPhotoStack = removePhoto('elsa', this.state.photoStack)
-			this.setState({
-				photosOn: false,
-				photoStack: nextPhotoStack
-			})
+		// if (!this.state.photosOn) {
+		// 	this.setState({ photosOn: true})
+		// 	this.togglePhoto()
+		// } else {
+		// 	let nextPhotoStack = removePhoto('elsa', this.state.photoStack)
+		// 	this.setState({
+		// 		photosOn: false,
+		// 		photoStack: nextPhotoStack
+		// 	})
 
-		}
+		// }
+		this.togglePhoto()
 	}
 
 	togglePhoto(id) {
@@ -50,8 +50,7 @@ export default class Home extends Component {
 	}
 
 	render() {
-		const photoId = this.state.photosOn ?
-			this.state.photoStack[this.state.photoStack.length - 1] : null
+		const photoId = this.state.photoStack[this.state.photoStack.length - 1] || null
 
 		return (
 			<div className="container">
