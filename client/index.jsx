@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import  { Router, Route, browserHistory } from 'react-router';
 
-// import 'normalize.css';
-import style from '../public/index.scss'
-
-import Home from './Home.jsx'
+import Home from './components/Home.jsx'
 
 ReactDOM.render(
 	<Router history={browserHistory}>

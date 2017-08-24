@@ -5,7 +5,7 @@ import ProjectContainer from './ProjectContainer';
 import Icons from './Icons';
 import IconsMobile from './IconsMobile';
 
-import projects from './projects';
+import projects from '../utils/projects';
 
 const addPhoto = (photo, stack) => [...stack, photo]
 const removePhoto = (photo, stack) => stack.filter(p => p !== photo)
