@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import Photo from './Photo';
 import ProjectContainer from './ProjectContainer';
@@ -54,7 +55,15 @@ export default class Home extends Component {
 
 		return (
 			<div className="container">
-			<Photo id={photoId} />
+			<div className="photo-container">
+				<CSSTransitionGroup
+					transitionName="fade"
+					transitionEnterTimeout={300}
+					transitionLeaveTimeout={300}
+				>
+					<Photo key={photoId} id={photoId} />
+				</CSSTransitionGroup>
+			</div>
 				<div className="body-wrapper">
 					<div className="top-container">
 						<div className="top">
