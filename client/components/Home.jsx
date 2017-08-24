@@ -24,17 +24,6 @@ export default class Home extends Component {
 	}
 
 	handleClick() {
-		// if (!this.state.photosOn) {
-		// 	this.setState({ photosOn: true})
-		// 	this.togglePhoto()
-		// } else {
-		// 	let nextPhotoStack = removePhoto('elsa', this.state.photoStack)
-		// 	this.setState({
-		// 		photosOn: false,
-		// 		photoStack: nextPhotoStack
-		// 	})
-
-		// }
 		this.togglePhoto()
 	}
 
