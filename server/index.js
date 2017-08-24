@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, './portfolio')))
+app.use('/public', express.static(path.join(__dirname, '../public')))
 
 app.get('/*', (req, res, next) => {
 	res.sendFile(path.join(__dirname, '../index.html'))
