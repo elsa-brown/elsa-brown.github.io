@@ -1,2 +1,2 @@
 # elsa-brown.github.io
-my portfolio site
+My portfolio site. Made with React and Node.js.
