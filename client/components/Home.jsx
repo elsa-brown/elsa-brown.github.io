@@ -55,13 +55,15 @@ export default class Home extends Component {
 
 		return (
 			<div className="container">
-			<CSSTransitionGroup
-				transitionName="fade"
-				transitionEnterTimeout={500}
-				transitionLeaveTimeout={500}
-			>
-				<Photo key={photoId} id={photoId} />
-			</CSSTransitionGroup>
+			<div className="photo-container">
+				<CSSTransitionGroup
+					transitionName="fade"
+					transitionEnterTimeout={300}
+					transitionLeaveTimeout={300}
+				>
+					<Photo key={photoId} id={photoId} />
+				</CSSTransitionGroup>
+			</div>
 				<div className="body-wrapper">
 					<div className="top-container">
 						<div className="top">
