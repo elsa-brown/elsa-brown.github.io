@@ -240,6 +240,15 @@ a:hover {
 		margin-bottom: 20px;
 	}
 
+	.photo-container {
+	 	margin-top: 10%;
+	 	margin-left: 52%;
+	}
+
+	#road {
+	 	margin-left: -12%;
+	}
+
 	.desc-show {
 		font-size: 24px;
 	}
