@@ -86,7 +86,6 @@ a:hover {
 }
 
 .fa-envelope-o {
-	font-size: 24px;
 	margin-left: -1px;
 }
 
@@ -282,4 +281,9 @@ a:hover {
 	.fa {
 		margin-right: 25px;
 	}
+
+	.fa-linkedin {
+		margin-left: -9px;
+	}
+
 }
