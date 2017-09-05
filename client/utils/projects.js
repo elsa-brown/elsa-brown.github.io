@@ -8,7 +8,7 @@ const projects = [
 	{
 		title: 'Spacechat',
 		desc: 'A virtual chatroom with speech-to-speech translation in twelve languages. The room responds to sentiment analysis of the speakers\' conversation.',
-		url: 'http://spacechat.tech',
+		url: 'https://github.com/elsa-brown/space-chat',
 		photoName: 'space'
 	},
 	{
