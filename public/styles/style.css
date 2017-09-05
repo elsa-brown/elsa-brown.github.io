@@ -85,6 +85,15 @@ a:hover {
 	margin-right: 10px;
 }
 
+.fa-envelope-o {
+	font-size: 24px;
+	margin-left: -1px;
+}
+
+.fa-linkedin {
+	margin-left: 1px;
+}
+
 #link {
 	font-size: 24px;
 	padding-left: 20px;
