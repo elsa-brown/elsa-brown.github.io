@@ -6,6 +6,7 @@ const Icons = () => {
 			<a href="http://github.com/elsa-brown" target="_blank" rel="noopener noreferrer"><i className="fa fa-github" aria-hidden="true" /></a>
 			<a href="https://twitter.com/elsambrown" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter" aria-hidden="true"></i></a>
 			<a href="mailto:elsambrown@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope-o" aria-hidden="true" /></a>
+			<a href="https://www.linkedin.com/in/elsa-brown"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
 
 		</div>
 	)
