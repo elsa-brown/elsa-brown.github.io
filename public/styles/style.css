@@ -1,13 +1,13 @@
 /* Global Styles */
 html, body {
 	font-family: 'Kite One', sans-serif;
-	font-size: 72px;
+	font-size: 2rem;
 	color: black;
 }
 
 h2 {
 	font-family: 'Roboto Mono', monospace;
-	font-size: 30px;
+	font-size: 1rem;
 }
 
 .container {
@@ -219,7 +219,7 @@ a:hover {
 }
 
 /* Responsive Styles */
-@media (max-width: 1150px) {
+@media screen and (max-width: 1150px) {
 	.body-wrapper {
 		width: 80%;
 	}
@@ -237,13 +237,7 @@ a:hover {
 	}
 }
 
-@media and (max-width: 768px) {
-	.body-wrapper {
-		width: 100%;
-	}
-}
-
-@media screen and (max-device-width: 600px) {
+@media screen and (max-width: 600px) {
 	.container {
 		margin-bottom: 20px;
 	}
@@ -254,7 +248,7 @@ a:hover {
 	}
 
 	#road {
-	 	margin-left: -12%;
+	 	margin-left: -10%;
 	}
 
 	.desc-show {
