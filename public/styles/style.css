@@ -266,6 +266,7 @@ a:hover {
 
 	.icons {
 		visibility: hidden;
+		display: none;
 	}
 
 	.icons-mobile {
