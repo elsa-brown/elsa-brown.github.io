@@ -12,6 +12,12 @@ const projects = [
 		photoName: 'space'
 	},
 	{
+		title: 'Responsive Page',
+		desc: 'Built with React, webpack, scss, and Flexbox.',
+		url: 'http://responsive.elsa-brown.com',
+		photoName: 'page'
+	},
+	{
 		title: 'Game Of Life',
 		desc: 'A cellular automaton zero-player game, built with GIF\'s and an ambient soundtrack.',
 		url: 'http://life.elsa-brown.com',
