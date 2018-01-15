@@ -36,8 +36,8 @@ export default class Home extends Component {
 		let photo = id ? this.state.projects[id].photoName : 'elsa'
 		let photoStack = this.state.photoStack
 
-		// Toggle function - If project is open, remove its photo from photoStack. 
-		// Otherwise, add its photo to photoStack 
+		// Toggle function - If project is open, remove its photo from photoStack
+		// Otherwise, add its photo to photoStack
 		const nextPhotoStack = this.state.photoStack.includes(photo) ?
 			removePhoto(photo, photoStack) :
 			addPhoto(photo, photoStack)
@@ -46,7 +46,7 @@ export default class Home extends Component {
 	}
 
 	render() {
-		// grab photoId for photo on top of photoStack, to pass to Photo component and render
+		// grab photoId for photo on top of photoStack (to pass to Photo component and render)
 		const photoId = this.state.photoStack[this.state.photoStack.length - 1] || null
 
 		return (
@@ -63,7 +63,11 @@ export default class Home extends Component {
 				<div className="body-wrapper">
 					<div className="top-container">
 						<div className="top">
-							<p className="name" onClick={this.handleClick}>Elsa Brown</p>
+							<p 
+								className="name" 
+								onClick={this.handleClick}>
+								Elsa Brown
+							</p>
 							<Icons />
 						</div>
 						<h2>web developer</h2>
@@ -72,7 +76,13 @@ export default class Home extends Component {
 					<div className="projects">
 						{ this.state.projects.map((project, idx) => {
 								return (
-									<ProjectContainer key={project.name} project={project} id={idx} togglePhoto={this.togglePhoto} photosOn={this.state.photosOn} />
+									<ProjectContainer
+										key={project.name}
+										project={project}
+										id={idx}
+										togglePhoto={this.togglePhoto}
+										photosOn={this.state.photosOn}
+									/>
 								)
 							})
 						}

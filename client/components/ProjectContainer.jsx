@@ -39,8 +39,16 @@ export default class ProjectContainer extends Component {
 
 		return (
 			<div>
-				<Project project={project} id={this.state.id} handleClick={this.handleClick} />
-				<Description project={project} id={this.state.id} className={descClass} />
+				<Project
+					project={project}
+					id={this.state.id}
+					handleClick={this.handleClick}
+				/>
+				<Description
+					project={project}
+					id={this.state.id}
+					className={descClass}
+				/>
 			</div>
 		)
 	}
