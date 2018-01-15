@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import Project from './Project';
 import Description from './Description';
 
+/* 
+This component manages state for the stateless Photo component.
+- toggles project Description and Photo to show/hide when Project title is clicked. 
+*/
 export default class ProjectContainer extends Component {
 	constructor(props) {
 		super(props)
@@ -30,6 +34,7 @@ export default class ProjectContainer extends Component {
 
 	render() {
 		const project = this.state.project
+		// update CSS class to show/hide description
 		const descClass = this.state.descShowing ? 'desc-show' : 'desc'
 
 		return (
