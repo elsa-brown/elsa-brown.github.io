@@ -1,19 +1,35 @@
 @import 'normalize';
 
-body {
-	align-items: center;
-	display: flex;
-	height: 100vh;
-	justify-content: center;
+a {
+	color: black;
+
+	&:hover {
+		font-style: italic;
+		letter-spacing: 0.055rem;
+	}
 }
 
 article {
 	margin-bottom: 50px;
 }
 
+body {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	padding: 50px 20px;
+}
+
 main {
-	margin-bottom: 50px;
-	max-width: 550px;
+	font-family: 'Palatino';
+  letter-spacing: 0.01rem;
+	max-width: 650px;
+}
+
+p {
+	line-height: 1.5rem;
 }
 
 ul {
@@ -31,12 +47,15 @@ ul {
 	}
 }
 
+.work {
+	li {
+		line-height: 1.5rem;
+	}
+}
+
 .skills {
 	span {
 		font-weight: bold;
 	}
 }
 
-.work {
-
-}
