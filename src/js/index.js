@@ -1,6 +1,3 @@
-console.log('running');
-
-
 let r = 255;
 let g = 255;
 let b = 255;
