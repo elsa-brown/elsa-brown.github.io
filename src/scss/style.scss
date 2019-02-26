@@ -1,0 +1,42 @@
+@import 'normalize';
+
+body {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+}
+
+article {
+	margin-bottom: 50px;
+}
+
+main {
+	margin-bottom: 50px;
+	max-width: 550px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.info {
+	ul {
+		display: flex;
+
+		li {
+			margin-right: 20px;
+		}
+	}
+}
+
+.skills {
+	span {
+		font-weight: bold;
+	}
+}
+
+.work {
+
+}
