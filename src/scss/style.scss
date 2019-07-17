@@ -48,14 +48,35 @@ ul {
 }
 
 .work {
+	display: flex;
+	justify-content: space-between;
+	max-width: 400px;
+	min-width: 336px;
+
+	section {
+		width: 168px;
+	}
+
 	li {
 		line-height: 1.5rem;
+	}
+
+	.disclaimer {
+		font-size: 11px;
+		line-height: 1rem;
+		letter-spacing: 0.015rem;
 	}
 }
 
 .skills {
 	span {
 		font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	article {
+		margin-bottom: 10px;
 	}
 }
 
