@@ -1,4 +1,3 @@
 # elsa-brown.github.io
 
-npm install
-npm start
+static site HTML + CSS
