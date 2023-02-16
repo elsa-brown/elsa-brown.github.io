@@ -153,6 +153,10 @@ template, [hidden] {
   box-sizing: border-box;
 }
 
+a {
+  color: #0d0d0d;
+}
+
 body {
   background: #e5e7f5;
   justify-content: center;
@@ -187,6 +191,16 @@ hr {
   margin-bottom: 2.25rem;
 }
 
+ul {
+  margin-top: 1.5rem;
+  list-style-type: none;
+}
+
+li {
+  letter-spacing: .0025rem;
+  line-height: 200%;
+}
+
 p {
   letter-spacing: .005rem;
   margin: 0 0 1rem;
@@ -206,9 +220,17 @@ footer {
   width: 100%;
   color: #fff;
   background: #0d0d0d;
-  padding: .5rem 0 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  display: flex;
   position: absolute;
+  bottom: 0;
   left: 0;
+}
+
+footer p {
+  margin: 0;
 }
 
 footer .inner {
@@ -221,52 +243,13 @@ footer .inner {
 
 main {
   margin-bottom: 4rem;
-}
-
-.carousel {
-  overflow-x: scroll;
-}
-
-.carousel .inner {
   display: flex;
-}
-
-.cell {
-  width: 400px;
-  margin-right: 1.5rem;
 }
 
 .container {
   width: 100%;
   max-width: 870px;
   padding: 0 2rem;
-}
-
-.description {
-  width: 100%;
-}
-
-.desktop {
-  width: 400px;
-  height: 250px;
-  background: #fff;
-  border-radius: 5px;
-  margin-right: 1.5rem;
-}
-
-.images {
-  display: flex;
-}
-
-.left {
-  margin-right: 2rem;
-}
-
-.mobile {
-  width: 140px;
-  height: 250px;
-  background: #fff;
-  border-radius: 5px;
 }
 
 /*# sourceMappingURL=index.8747aa5a.css.map */

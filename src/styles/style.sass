@@ -4,6 +4,9 @@
 *
 	box-sizing: border-box
 
+a 
+	color: $black
+
 body
 	background: #e5e7f5
 	display: flex
@@ -32,6 +35,14 @@ header
 hr
 	margin-bottom: $s3
 
+ul
+	list-style-type: none
+	margin-top: $s1
+
+li
+	letter-spacing: 0.0025rem
+	line-height: 200%
+
 p
 	letter-spacing: 0.005rem
 	margin: 0 0 $s0
@@ -46,11 +57,17 @@ svg
 
 footer
 	position: absolute
+	display: flex
+	align-items: center
+	justify-content: center
+	bottom: 0
 	left: 0
 	width: 100%
+	padding: $s1 0
 	background: $black
 	color: $white
-	padding: $s-2 0 $s4
+	p
+		margin: 0
 	.inner
 		margin: 0 auto
 		display: flex
@@ -60,43 +77,10 @@ footer
 
 main
 	margin-bottom: $s5
-
-.carousel
-	overflow-x: scroll
-	// scrollbar-width: none
-	// -ms-overflow-style: none
-	// &::-webkit-scrollbar
-	// 	display: none
-	.inner
-		display: flex
-
-.cell
-	width: 400px
-	margin-right: $s1
+	display: flex
 
 .container
 	width: 100%
 	max-width: 870px
 	padding: 0 $s2
 
-.description
-	width: 100%
-
-.desktop
-	background: $white
-	border-radius: 5px
-	width: 400px // 320px  112px
-	height: 250px // 200px  200px
-	margin-right: $s1
-
-.images
-	display: flex
-
-.left
-	margin-right: $s2
-
-.mobile
-	background: $white
-	border-radius: 5px
-	width: 140px
-	height: 250px
