@@ -357,8 +357,10 @@ template {
 a {
   color: #0d0d0d;
 }
-a:hover {
-  text-decoration: none;
+@media screen and (min-width: 415px) {
+  a:hover, a:focus {
+    text-decoration: none;
+  }
 }
 body {
   background: #e5e7f5;
@@ -392,10 +394,6 @@ li {
   letter-spacing: 0.0025rem;
   line-height: 200%;
 }
-p {
-  letter-spacing: 0.005rem;
-  margin: 0 0 1rem;
-}
 svg {
   display: block;
 }
@@ -409,11 +407,13 @@ footer {
   width: 100%;
   padding: 1.5rem 0;
   background: #0d0d0d;
-  color: #fff;
+  
 }
 
-footer > p {
-  margin: 0;
+footer > a {
+  color: #fff;
+  letter-spacing: 0.005rem;
+  text-decoration: none;
 }
 
 main {
