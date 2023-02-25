@@ -1,3 +1,3 @@
 # elsa-brown.github.io
 
-static site HTML + CSS
+static site HTML + CSS + JavaScript
