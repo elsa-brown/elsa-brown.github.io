@@ -376,6 +376,7 @@ h1 {
   margin: 0;
 }
 h2 {
+  font-size: 1.25rem;
   margin: 0 0 1.5rem;
   letter-spacing: 0.0125rem;
 }
@@ -425,4 +426,14 @@ main {
   width: 100%;
   max-width: 870px;
   padding: 0 2rem;
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
 }
